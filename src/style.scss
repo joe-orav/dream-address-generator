@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+$site-font-family: "Lato", sans-serif;
+$primary-color: #4852a7;
+$secondary-color: #df8eed;
+
+body {
+  background-color: $primary-color;
+  font-family: $site-font-family;
+}
+
+.site-title {
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  color: #dcc790;
+  font-size: 2.8rem;
+  margin: 1rem 0 2rem;
+}
+
+.code-section {
+  border: 1px solid $secondary-color;
+  border-radius: 25px;
+  width: 85%;
+  margin: auto;
+  background-color: rgba($secondary-color, 0.3);
+}
+
+.code-ctr {
+  background-color: #282727;
+  padding: 0.6rem 0;
+  margin: 1.1rem auto 1.4rem;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.code {
+  margin: 0;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.generate-btn-ctr {
+  margin: 0.6rem auto;
+  display: flex;
+}
+
+.generate-btn {
+  background: $secondary-color;
+  color: #fff;
+  border: none;
+  margin: 0 auto 1rem;
+  font-size: 1.1rem;
+  padding: 0.4rem;
+  border-radius: 10px;
+  width: 150px;
+}
+
+.description-ctr {
+  margin: 2rem auto 1.5rem;
+  width: 90%;
+  font-size: 1.1rem;
+}
+
+.description {
+  color: #fff;
+  text-align: center;
+}
+
+.report-area {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  padding-bottom: 1rem;
+}
+
+.luna-img-ctr {
+  width: 70px;
+  margin-right: 10px;
+}
+
+.luna-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.report-message {
+    background: center / contain url("./dialog.png") no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.report-message-text {
+    font-weight: bold;
+    color: #877358;
+    margin: 0;
+    font-size: 0.85rem;
+    padding-right: 10px;
+    padding-left: 15px;
+}
+
+.report-btn {
+    color: #11B0C3;
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
