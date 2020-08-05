@@ -5,9 +5,32 @@ $site-font-family: "Lato", sans-serif;
 $primary-color: #4852a7;
 $secondary-color: #df8eed;
 
+$breakpoints: (
+  "small-mobile": 320px,
+  "med-mobile": 375px,
+  "large-mobile": 425px,
+  "tablet": 768px,
+  "laptop": 1024px,
+  "large-laptop": 1440px,
+  "4k": 2560px,
+);
+
+@mixin res-bkpt($breakpoint) {
+  $get-breakpoint: map-get($breakpoints, $breakpoint);
+  @media screen and (min-width: $get-breakpoint) {
+    @content;
+  }
+}
+
 body {
   background-color: $primary-color;
   font-family: $site-font-family;
+}
+
+main {
+  max-width: 500px;
+  margin: auto;
+  display: block;
 }
 
 .site-title {
@@ -24,14 +47,19 @@ body {
   width: 85%;
   margin: auto;
   background-color: rgba($secondary-color, 0.3);
+  padding: 1.5rem 0;
 }
 
 .code-ctr {
   background-color: #282727;
   padding: 0.6rem 0;
-  margin: 1.1rem auto 1.4rem;
+  margin: 0 auto 1.4rem;
   width: 80%;
   border-radius: 10px;
+
+  @include res-bkpt("med-mobile") {
+    max-width: 250px;
+  }
 }
 
 .code {
@@ -39,10 +67,13 @@ body {
   color: #fff;
   font-weight: bold;
   text-align: center;
+
+  @include res-bkpt("med-mobile") {
+    font-size: 1.2rem;
+  }
 }
 
 .generate-btn-ctr {
-  margin: 0.6rem auto;
   display: flex;
 }
 
@@ -50,11 +81,24 @@ body {
   background: $secondary-color;
   color: #fff;
   border: none;
-  margin: 0 auto 1rem;
+  margin: 0 auto;
   font-size: 1.1rem;
   padding: 0.4rem;
   border-radius: 10px;
   width: 150px;
+
+  &:hover {
+      cursor: pointer;
+      background-color: rgba($secondary-color, 0.8);
+  }
+
+  @include res-bkpt("med-mobile") {
+    font-size: 1.2rem;
+  }
+
+  @include res-bkpt("tablet") {
+    font-size: 1.3rem;
+  }
 }
 
 .description-ctr {
@@ -66,6 +110,14 @@ body {
 .description {
   color: #fff;
   text-align: center;
+
+  @include res-bkpt("med-mobile") {
+    font-size: 1.2rem;
+  }
+
+  @include res-bkpt("tablet") {
+    font-size: 1.3rem;
+  }
 }
 
 .report-area {
@@ -78,6 +130,14 @@ body {
 .luna-img-ctr {
   width: 70px;
   margin-right: 10px;
+
+  @include res-bkpt("med-mobile") {
+    width: 90px;
+  }
+
+  @include res-bkpt("tablet") {
+    width: 100px;
+  }
 }
 
 .luna-img {
@@ -87,25 +147,40 @@ body {
 }
 
 .report-message {
-    background: center / contain url("./dialog.png") no-repeat;
-    position: relative;
-    display: flex;
-    align-items: center;
+  background: center / contain url("./dialog.png") no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .report-message-text {
-    font-weight: bold;
-    color: #877358;
-    margin: 0;
-    font-size: 0.85rem;
-    padding-right: 10px;
-    padding-left: 15px;
+  font-weight: bold;
+  color: #877358;
+  margin: 0;
+  font-size: 0.85rem;
+  padding: 0 18px;
+
+  @include res-bkpt("med-mobile") {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+
+  @include res-bkpt("med-mobile") {
+    font-size: 1.1rem;
+    padding-left: 25px;
+  }
+
+  @include res-bkpt("tablet") {
+    padding-left: 30px;
+    font-size: 1.3rem;
+  }
 }
 
 .report-btn {
-    color: #11B0C3;
-    &:hover {
-        text-decoration: underline;
-        cursor: pointer;
-    }
+  color: #11b0c3;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }
