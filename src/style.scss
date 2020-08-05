@@ -22,9 +22,21 @@ $breakpoints: (
   }
 }
 
+html,
 body {
-  background-color: $primary-color;
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(
+      180deg,
+      rgba(55, 48, 137, 1) 0%,
+      rgba(162, 112, 211, 1) 63%,
+      rgba(220, 187, 236, 1) 90%
+    )
+    no-repeat;
   font-family: $site-font-family;
+  margin: 0;
 }
 
 main {
@@ -38,7 +50,8 @@ main {
   text-align: center;
   color: #dcc790;
   font-size: 2.8rem;
-  margin: 1rem 0 2rem;
+  margin: 0 0 2rem;
+  padding-top: 1.5rem;
 }
 
 .code-section {
@@ -88,8 +101,8 @@ main {
   width: 150px;
 
   &:hover {
-      cursor: pointer;
-      background-color: rgba($secondary-color, 0.8);
+    cursor: pointer;
+    background-color: rgba($secondary-color, 0.8);
   }
 
   @include res-bkpt("med-mobile") {
