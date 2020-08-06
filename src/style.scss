@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
 $site-font-family: "Lato", sans-serif;
-$primary-color: #4852a7;
 $secondary-color: #df8eed;
 
 $breakpoints: (
@@ -19,6 +18,18 @@ $breakpoints: (
   $get-breakpoint: map-get($breakpoints, $breakpoint);
   @media screen and (min-width: $get-breakpoint) {
     @content;
+  }
+}
+
+%button {
+  background: $secondary-color;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba($secondary-color, 0.8);
   }
 }
 
@@ -91,19 +102,11 @@ main {
 }
 
 .generate-btn {
-  background: $secondary-color;
-  color: #fff;
-  border: none;
+  @extend %button;
   margin: 0 auto;
   font-size: 1.1rem;
   padding: 0.4rem;
-  border-radius: 10px;
   width: 150px;
-
-  &:hover {
-    cursor: pointer;
-    background-color: rgba($secondary-color, 0.8);
-  }
 
   @include res-bkpt("med-mobile") {
     font-size: 1.2rem;
@@ -196,4 +199,61 @@ main {
     text-decoration: underline;
     cursor: pointer;
   }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.report-modal {
+  width: 80%;
+  margin: auto;
+  background-color: hsl(270, 52.9, 57);
+  border-radius: 10px;
+  margin-top: 3rem;
+  max-width: 350px;
+}
+
+.modal-text {
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  margin: 0;
+}
+
+.text-question {
+  padding: 1rem 1rem;
+  font-size: 1.2rem;
+}
+
+.invalid-code {
+  color: #dcc790;
+  font-size: 1.5rem;
+}
+
+.modal-btn-ctr {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1.3rem;
+
+  button {
+    @extend %button;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+.status-text {
+  color: #fff;
+  text-align: center;
+  font-size: 1.15rem;
+  padding-bottom: 1rem;
+  margin: 0;
+  display: none;
 }

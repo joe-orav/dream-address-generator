@@ -5,7 +5,7 @@ export async function fetchCodes() {
   let fetchResult = await fetch("./download.json");
   let dataJson = await fetchResult.json();
   dreamCodes = [...dataJson["codes"]];
-  codeText.innerHTML = dreamCodes[getRandomIndex()].code;
+  setNewCode();
 }
 
 export function displayNewCode() {
@@ -14,4 +14,9 @@ export function displayNewCode() {
 
 function getRandomIndex() {
   return Math.floor(Math.random() * Math.floor(dreamCodes.length));
+}
+
+export function setNewCode() {
+  codeText.innerHTML = dreamCodes[getRandomIndex()].code;
+  codeText.setAttribute("data-codeid", dreamCodes[getRandomIndex()].id)
 }
