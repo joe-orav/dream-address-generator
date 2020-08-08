@@ -32,6 +32,11 @@ $breakpoints: (
     cursor: pointer;
     background-color: rgba($secondary-color, 0.8);
   }
+
+  &:disabled {
+    background-color: #ebbaf4;
+    color:#A9A9A9;
+  }
 }
 
 .site-img {
@@ -87,6 +92,7 @@ main {
   margin: 0 auto 1.4rem;
   width: 80%;
   border-radius: 10px;
+  min-height: 20px;
 
   @include res-bkpt("med-mobile") {
     max-width: 250px;

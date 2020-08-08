@@ -1,15 +1,28 @@
 let dreamCodes = [];
 let codeText = document.querySelector(".code");
+let generateBtn = document.querySelector(".generate-btn");
 
 export async function fetchCodes() {
-  let fetchResult = await fetch("./download.json");
-  let dataJson = await fetchResult.json();
-  dreamCodes = [...dataJson["codes"]];
-  setNewCode();
+  let fetchResult;
+  codeText.textContent = "Getting address...";
+  generateBtn.disabled = true;
+
+  try {
+    fetchResult = await fetch("https://dicg-api.herokuapp.com/");
+  } catch {
+    codeText.textContent = "Unable to get address";
+  }
+
+  if (fetchResult) {
+    let dataJson = await fetchResult.json();
+    dreamCodes = [...dataJson["codes"]];
+    setNewCode();
+    generateBtn.disabled = false;
+  }
 }
 
 export function displayNewCode() {
-  codeText.innerHTML = dreamCodes[getRandomIndex()].code;
+  codeText.textContent = dreamCodes[getRandomIndex()].code;
 }
 
 function getRandomIndex() {
@@ -17,6 +30,6 @@ function getRandomIndex() {
 }
 
 export function setNewCode() {
-  codeText.innerHTML = dreamCodes[getRandomIndex()].code;
-  codeText.setAttribute("data-codeid", dreamCodes[getRandomIndex()].id)
+  codeText.textContent = dreamCodes[getRandomIndex()][1];
+  codeText.setAttribute("data-codeid", dreamCodes[getRandomIndex()][0]);
 }
