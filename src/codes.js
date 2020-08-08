@@ -8,7 +8,7 @@ export async function fetchCodes() {
   generateBtn.disabled = true;
 
   try {
-    fetchResult = await fetch("https://dicg-api.herokuapp.com/");
+    fetchResult = await fetch(process.env.API_URL);
   } catch {
     codeText.textContent = "Unable to get address";
   }

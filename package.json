@@ -20,6 +20,7 @@
   "homepage": "https://github.com/joe-orav/dicg#readme",
   "devDependencies": {
     "css-loader": "^4.2.0",
+    "dotenv-webpack": "^2.0.0",
     "file-loader": "^6.0.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
