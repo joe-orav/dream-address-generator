@@ -15,9 +15,14 @@ export async function fetchCodes() {
 
   if (fetchResult) {
     let dataJson = await fetchResult.json();
-    dreamCodes = [...dataJson["codes"]];
-    setNewCode();
-    generateBtn.disabled = false;
+
+    if (dataJson["codes"].length === 0) {
+      codeText.textContent = "No codes found";
+    } else {
+      dreamCodes = [...dataJson["codes"]];
+      setNewCode();
+      generateBtn.disabled = false;
+    }
   }
 }
 
