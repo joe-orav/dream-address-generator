@@ -1,4 +1,4 @@
 node_modules
 dist
-public/download.json
+src/download.json
 .env

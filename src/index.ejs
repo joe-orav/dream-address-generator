@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dream Address Generator</title>
+    <title><%= siteTitle %></title>
   </head>
   <body>
     <main>
       <section>
-        <h1 class="site-title">Dream Address Generator</h1>
+        <h1 class="site-title"><%= siteTitle %></h1>
       </section>
       <section>
         <div class="code-section">
@@ -16,7 +14,7 @@
             <p class="code"></p>
           </div>
           <div class="generate-btn-ctr">
-            <button class="generate-btn">Generate</button>
+            <button class="generate-btn"><%= buttonLabel %></button>
           </div>
         </div>
       </section>
@@ -25,27 +23,23 @@
           <div class="luna-img-ctr">
             <img
               class="site-img"
-              src="./img/Luna.png"
+              src="<%= require('./img/Luna.png') %>"
               alt="Luna from Animal Crossing"
             />
           </div>
           <div class="dialog-img-ctr">
             <img
               class="site-img"
-              src="./img/dialog.png"
+              src="<%= require('./img/dialog.png') %>"
               alt="Dialog box showing site description"
             />
           </div>
         </div>
-        <p class="disclaimer">
-          Disclaimer: All addresses are pulled from the r/AnimalCrossing subreddit. Due to
-          the ability to update dream island addresses, there is the possiblity
-          that a code you get may no longer be valid.
-        </p>
+        <p class="disclaimer"><%= disclaimer %></p>
       </section>
       <footer>
         <p class="footer-text">
-          Crafted by <a href="https://josephoravbiere.com">Joseph Oravbiere</a>
+          Crafted by <a href="<%= portfolioLink %>"><%= devName %></a>
         </p>
       </footer>
     </main>
