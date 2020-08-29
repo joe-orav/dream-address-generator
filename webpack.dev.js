@@ -1,5 +1,5 @@
-const { merge } = require("webpack-merge");
-const base = require("./webpack.base.js");
+const { merge } = require("webpack-merge")
+const base = require("./webpack.base.js")
 
 module.exports = merge(base, {
   mode: "development",
@@ -13,5 +13,6 @@ module.exports = merge(base, {
   },
   devServer: {
     contentBase: "./src",
+    writeToDisk: true
   },
-});
+})
