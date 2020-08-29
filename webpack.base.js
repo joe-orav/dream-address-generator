@@ -55,7 +55,7 @@ module.exports = {
       start_url: "/",
       description: "Get a random Animal Crossing Dream Address",
       theme_color: "#373089",
-      background_color: "#df8eed",
+      background_color: "#373089",
       display: "standalone",
       icons: [
         {
