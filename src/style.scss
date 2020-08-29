@@ -2,7 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
 $site-font-family: "Lato", sans-serif;
-$secondary-color: #df8eed;
+$code-section-color: #df8eed;
+$button-color: #6A51B3;
+$button-color-disabled: #7967BC;
 $text-color: #fff;
 
 $breakpoints: (
@@ -23,19 +25,19 @@ $breakpoints: (
 }
 
 %button {
-  background: $secondary-color;
+  background: $button-color;
   color: $text-color;
   border: none;
   border-radius: 10px;
 
   &:hover {
     cursor: pointer;
-    background-color: rgba($secondary-color, 0.8);
+    background-color: rgba($button-color, 0.7);
   }
 
   &:disabled {
-    background-color: #ebbaf4;
-    color:#A9A9A9;
+    background-color: $button-color-disabled;
+    color:#D6D6D6;
   }
 }
 
@@ -82,11 +84,11 @@ main {
 }
 
 .code-section {
-  border: 1px solid $secondary-color;
+  border: 1px solid $code-section-color;
   border-radius: 25px;
   width: 85%;
   margin: auto;
-  background-color: rgba($secondary-color, 0.3);
+  background-color: rgba($code-section-color, 0.3);
   padding: 1.5rem 0;
 }
 

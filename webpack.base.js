@@ -43,7 +43,7 @@ module.exports = {
         viewport: "width=device-width, initial-scale=1.0",
         description:
           "Make your next dream island visit a surprise by getting a randomly chosen dream island address",
-        "theme-color": "#373089",
+        "theme-color": "#312377",
       },
     }),
     new Dotenv({
@@ -51,18 +51,31 @@ module.exports = {
     }),
     new WebpackPwaManifest({
       name: "Dream Address Generator",
-      short_name: "ACNH Dream Address",
+      short_name: "Dream Address Generator",
       start_url: "/",
       description: "Get a random Animal Crossing Dream Address",
-      theme_color: "#373089",
-      background_color: "#373089",
+      theme_color: "#312377",
+      background_color: "#312377",
       display: "standalone",
+      inject: true,
+      ios: "true",
       icons: [
         {
           src: path.resolve("src/favicon.png"),
           sizes: [128, 144, 152, 192, 256, 512],
           destination: "icons",
         },
+        {
+          src: path.resolve('src/favicon.png'),
+          size: 192,
+          destination: path.join('icons', 'ios'),
+          ios: 'true'
+        },
+        {
+          src: path.resolve('src/img/icon_maskable.png'),
+          size: '598x598',
+          purpose: 'maskable'
+        }
       ],
     }),
     new WorkboxPlugin.GenerateSW({
